@@ -1,18 +1,18 @@
 import javax.swing.*;
+import java.io.File;
 
 public class Window{
     int WIDTH = 500;
     int HEIGHT = 500;
+    Animated animated;
 
 
-    public Window() {
-        LineAnimation lineAnimation = new LineAnimation();
+    public Window(Animated animated) {
         JFrame frame = new JFrame();
-        frame.add(lineAnimation);
+        frame.add((JComponent)animated);
         frame.setSize(WIDTH,HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(lineAnimation);
-        frame.paint(lineAnimation.getGraphics());
+        frame.getContentPane().add((JComponent)animated);
         frame.setVisible(true);
     }
 }

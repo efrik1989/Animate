@@ -1,10 +1,10 @@
 import java.awt.*;
 
-public class LineAnimation extends Animation{
+public class QuadroAnimation extends Animation{
     int x = 0;
     int y = 0;
 
-    public LineAnimation(String image_path) {
+    public QuadroAnimation(String image_path) {
         super(image_path);
     }
 
@@ -16,9 +16,9 @@ public class LineAnimation extends Animation{
 
     @Override
     public void animate() {
-        System.out.println("LineAnimation:::animate");
         x=x+5;
         y=y+5;
         repaint();
     }
 }
+

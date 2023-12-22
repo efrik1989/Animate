@@ -1,6 +1,10 @@
 public class Main {
+    static String IMAGE_PATH = "C:\\Lin\\balloon.png";
+
 
     public static void main(String[] args) {
-        Window window = new Window();
+
+        LineAnimation lineAnimation = new LineAnimation(IMAGE_PATH);
+        Window window = new Window(lineAnimation);
     }
 }

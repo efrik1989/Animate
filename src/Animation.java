@@ -12,10 +12,13 @@ import java.io.IOException;
 public abstract class Animation extends JComponent implements Animated{
     int TIMEOUT = 100;
     BufferedImage image;
-    int x = 0;
-    int y = 0;
+    final int START_COORDINATE = 0;
+    int x = START_COORDINATE;
+    int y = START_COORDINATE;
     boolean isReverseY;
     boolean isReverseX;
+    boolean isStopY;
+    boolean isStopX;
 
     public Animation(String image_path) {
         File file = new File(image_path);

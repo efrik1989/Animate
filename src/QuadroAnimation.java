@@ -7,8 +7,6 @@ public class QuadroAnimation extends Animation{
     int WIDTH = 700;
     int HEIGHT = 700;
     int START_COORDINATE = 0;
-    boolean isStopY;
-    boolean isStopX;
 
     public QuadroAnimation(String image_path) {
         super(image_path);

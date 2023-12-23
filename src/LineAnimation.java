@@ -1,8 +1,9 @@
 import java.awt.*;
 
+/**
+ * Класс анимации картинки по диагонали.
+ */
 public class LineAnimation extends Animation{
-    int x = 0;
-    int y = 0;
 
     public LineAnimation(String image_path) {
         super(image_path);

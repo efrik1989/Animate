@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LineAnimation lineAnimation = new LineAnimation(IMAGE_PATH);
-        Window window = new Window(lineAnimation);
+        Animation animation = new QuadroAnimation(IMAGE_PATH);
+
+        Window window = new Window(animation);
     }
 }

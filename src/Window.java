@@ -1,11 +1,8 @@
 import javax.swing.*;
-import java.io.File;
 
 public class Window{
-    int WIDTH = 500;
-    int HEIGHT = 500;
-    Animated animated;
-
+    int WIDTH = 1920;
+    int HEIGHT = 1080;
 
     public Window(Animated animated) {
         JFrame frame = new JFrame();

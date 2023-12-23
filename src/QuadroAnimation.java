@@ -4,8 +4,9 @@ import java.awt.*;
  * Класс анимации картинки квадратом
  */
 public class QuadroAnimation extends Animation{
-    int WIDTH = 1000;
-    int HEIGHT = 1000;
+    int WIDTH = 700;
+    int HEIGHT = 700;
+    int START_COORDINATE = 0;
     boolean isStopY;
     boolean isStopX;
 
@@ -20,15 +21,33 @@ public class QuadroAnimation extends Animation{
         g.drawImage(image, x,y, this);
     }
 
-    //TODO: Логика не завершена. Продолжить!!!
     @Override
     public void animate() {
-        if (x == 1000) {
+        if (x == WIDTH && y == START_COORDINATE) {
             isStopY = false;
             isReverseX = true;
+            isStopX = true;
         }
-        if (x <= WIDTH && isStopY && !isReverseX) x=x+20;
-        y=y+20;
+        if (y == HEIGHT && x == WIDTH) {
+            isStopX = false;
+            isReverseY = true;
+            isStopY = true;
+        }
+        if (y == HEIGHT && x == START_COORDINATE) {
+            isStopX = true;
+            isReverseX = false;
+            isStopY = false;
+        }
+        if (y == START_COORDINATE && x == START_COORDINATE) {
+            isStopX = false;
+            isReverseY = false;
+            isStopY = true;
+        }
+
+        if (x <= WIDTH && !isStopX && !isReverseX) x=x+20;
+        if (x >= START_COORDINATE && !isStopX && isReverseX) x=x-20;
+        if (y <= HEIGHT && !isStopY && !isReverseY) y=y+20;
+        if (y >= START_COORDINATE && !isStopY && isReverseY) y=y-20;
         repaint();
     }
 }

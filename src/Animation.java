@@ -10,7 +10,7 @@ import java.io.IOException;
  * Класс каркас для анимаций картинки.
  */
 public abstract class Animation extends JComponent implements Animated{
-    int TIMEOUT = 100;
+    int timeout = 100;
     BufferedImage image;
     final int START_COORDINATE = 0;
     int x = START_COORDINATE;
@@ -35,8 +35,18 @@ public abstract class Animation extends JComponent implements Animated{
             e.printStackTrace();
         }
 
-        Timer timer = new Timer(TIMEOUT, actionListener);
+        Timer timer = new Timer(timeout, actionListener);
         timer.start();
     }
 
+    public Animation() {
+
+    }
+
+    public Animation(int timeout, BufferedImage image, int x, int y) {
+        this.timeout = timeout;
+        this.image = image;
+        this.x = x;
+        this.y = y;
+    }
 }

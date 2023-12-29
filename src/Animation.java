@@ -13,13 +13,16 @@ public abstract class Animation extends JComponent implements Animated{
     int timeout = 100;
     BufferedImage image;
     final int START_COORDINATE = 0;
-    int x = START_COORDINATE;
-    int y = START_COORDINATE;
+    public int x = START_COORDINATE;
+    public int y = START_COORDINATE;
     boolean isReverseY;
     boolean isReverseX;
     boolean isStopY;
     boolean isStopX;
     String image_path;
+    double angle = 6;
+    double radius = 50;
+    int i = 0;
 
     public Animation(String image_path) {
         this.image_path = image_path;
@@ -27,11 +30,12 @@ public abstract class Animation extends JComponent implements Animated{
         animationInit();
     }
 
-    public Animation(String image_path, int x, int y, int timeout) {
+    public Animation(String image_path, int x, int y, int timeout, int radius) {
         this.timeout = timeout;
         this.image_path = image_path;
         this.x = x;
         this.y = y;
+        this.radius = radius;
         loadImage();
         animationInit();
     }
@@ -48,12 +52,14 @@ public abstract class Animation extends JComponent implements Animated{
         };
         Timer timer = new Timer(timeout, actionListener);
         timer.start();
+        System.out.println("Animation is start.");
     }
 
     protected void loadImage() {
         File file = new File(image_path);
         try {
             image = ImageIO.read(file);
+            System.out.println("Load image... done");
         } catch (IOException e) {
             e.printStackTrace();
         }

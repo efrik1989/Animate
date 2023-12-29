@@ -1,8 +1,8 @@
 import javax.swing.*;
 
 public class Window{
-    int WIDTH = 1920;
-    int HEIGHT = 1080;
+    static int WIDTH = 1920;
+    static int HEIGHT = 1080;
 
     public Window(Animated...animated) {
         JFrame frame = new JFrame();

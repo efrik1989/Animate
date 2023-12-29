@@ -6,5 +6,6 @@ public enum AnimationType {
     JUPITER,
     SATURN,
     URANUS,
-    NEPTUNE;
+    NEPTUNE,
+    SUN;
 }

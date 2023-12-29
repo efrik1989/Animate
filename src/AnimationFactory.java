@@ -5,7 +5,7 @@ public class AnimationFactory {
     //TODO: реализовать патерн Factory.
     // Пока ничего лучше не придумал как менять анимацию от модели к модели боле гибко.
     // Стоит подумать еще немного.
-    public Animation createAnimation(AnimationType type) {
+    public Animation createAnimation(AnimationType type, String image_path) {
         Animation animation;
         switch (type) {
             case MARS:
@@ -31,7 +31,9 @@ public class AnimationFactory {
             case NEPTUNE:
                 animation = new NeptuneAnimation();
                 break;
-
+            case SUN:
+                animation = new Model(image_path, 860, 540, 20, 0);
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + type);
         }
